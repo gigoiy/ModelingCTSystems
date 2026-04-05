@@ -55,7 +55,7 @@ The solutions for $\overset{.}{x_1}$ and $\overset{.}{x_2}$ are:
 
 <p align="left">(3)</p>
 
-$$ \overset{.}{x_1} = \frac{1}{L}u - \frac{R}{L}x_1 - \frac{K}{L}x_2$$
+$$ \overset{.}{x_1} = \frac{1}{L}u - \frac{R}{L}x_1 - \frac{K}{L}x_2 $$
 
 <p align="left">(4)</p>
 
@@ -103,27 +103,27 @@ $$
 \overset{..}{\theta} = \frac{K}{J}i - \frac{b}{J}\overset{.}{\theta} 
 $$
 
-State-space descriptions always follow a pattern when constructing the block diagram. Using the basic formula for state-space descriptions $ \overset{.}{x_i} = a_{i1}x_1 + a_{i2}x_2 + b_iu $, we can use it's related block diagram pattern:
+State-space descriptions always follow a pattern when constructing the block diagram. Using the basic formula for state-space descriptions $\overset{.}{x_i} = a_{i1}x_1 + a_{i2}x_2 + b_iu$, we can use it's related block diagram pattern:
 
 ![Block Diagram Formula](img/formula_block_diagram.png)
 
-We start by constructing the block diagram for $ x_1 $:
+We start by constructing the block diagram for $x_1$:
 
 ![Block Diagram of X1](img/x1_block_diagram.png)
 
-Then we construct the block diagram for $ x_2 $:
+Then we construct the block diagram for $x_2$:
 
 ![Block Diagram of X2](img/x2_block_diagram.png)
 
-Then we combine both block diagrams by connecting the output of $ x_1 $ to the input of $ x_2 $:
+Then we combine both block diagrams by connecting the output of $x_1$ to the input of $x_2$:
 
 ![Full Block Diagram](img/full_block_diagram.png)
 <p style="text-align: center;">Figure 2. Block Diagram for a DC Motor Circuit</p>
 
 ## Transfer Function
-Here we will solve for the transfer function which is $ \frac{\Omega(s)}{V_I(s)} $.
+Here we will solve for the transfer function which is $\frac{\Omega(s)}{V_I(s)}$.
 
-First we need to get the Laplace transformation of $ v_I $ and $ i $ from equations (1) and (2):
+First we need to get the Laplace transformation of $v_I$ and $i$ from equations (1) and (2):
 
 $$ 
 V_I(s) = RI(s) + LsI(s) + K\Omega(s) \\
@@ -161,7 +161,7 @@ V_I(s) = (\Omega(s)\frac{b + sJ}{K})(R + Ls) + K\Omega(s) \\
 V_I(s) = R\Omega(s)\frac{b + sJ}{K} + Ls\Omega(s)\frac{b + sJ}{K} + K\Omega(s)
 $$
 
-We then factor out the $ \Omega(s) $ and the numerator of the equation additionally:
+We then factor out the $\Omega(s)$ and the numerator of the equation additionally:
 
 $$
 V_I(s) = \Omega(s)(\frac{R(b + sJ)}{K} + \frac{Ls(b + sJ)}{K} + K)\\
@@ -169,7 +169,7 @@ V_I(s) = \Omega(s)(\frac{R(b + sJ)}{K} + \frac{Ls(b + sJ)}{K} + K)\\
 V_I(s) = \Omega(s)(\frac{(R + Ls)(b + sJ)}{K} + K) 
 $$
 
-Using our formula for the transfer function $ \frac{\Omega(s)}{V_I(s)} $, we can easily see:
+Using our formula for the transfer function $\frac{\Omega(s)}{V_I(s)}$, we can easily see:
 
 $$
 \frac{\Omega(s)}{V_I(s)} = \frac{\Omega(s)}{\Omega(s)(\frac{(R + Ls)(b + sJ)}{K} + K)} = \frac{1}{\frac{(R + Ls)(b + sJ)}{K} + K}
