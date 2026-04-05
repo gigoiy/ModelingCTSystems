@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import signal
 
-#Numerator and denominator coefficients calculated from given values
+# Numerator and denominator coefficients calculated from given values
 num = [.01]
 den = [.005, .06, .1001] 
 
@@ -22,7 +22,7 @@ else:
 
 print("Estimated Settling Time:", Ts, "seconds")
 
-#Plot the step response
+# Plot the step response
 plt.plot(t, y)
 plt.title("Step Response of DC Motor")
 plt.xlabel("Time (s)")
@@ -33,7 +33,7 @@ plt.show()
 
 w, mag, phase = signal.bode(system) #Calculate frequency, magnitude, and phase of the system
 
-#Plot the frequency response
+# Plot the frequency response
 
 # Magnitude
 plt.semilogx(w, mag)
