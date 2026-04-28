@@ -20,10 +20,12 @@ $$ J\overset{..}{\theta} = Ki - b\overset{.}{\theta} $$
 We will assign:
 
 $$
+\begin{aligned}
 x_1 = i \\
 x_2 = \overset{.}{\theta}  \\
 y = \overset{.}{\theta} = x_2 \\
 v_I = u
+\end{aligned}
 $$
 
 We will then solve for $\overset{.}{x_1}$ and $\overset{.}{x_2}$ using both equation (1) and (2). 
@@ -31,18 +33,22 @@ We will then solve for $\overset{.}{x_1}$ and $\overset{.}{x_2}$ using both equa
 First we solve for $\overset{.}{x_1}$ using equation (1):
 
 $$
+\begin{aligned}
 u = Rx_1 + L\overset{.}{x_1} + Kx_2 \\
 u - L\overset{.}{x_1} = Rx_1 + Kx_2 \\
 -L\overset{.}{x_1} = Rx_1 + Kx_2 - u \\
 \overset{.}{x_1} = -\frac{R}{L}x_1 - \frac{K}{L}x_2 + \frac{1}{L}u
+\end{aligned}
 $$
 
 Next we will solve for $\overset{.}{x_2}$ using equation (2):
 
 $$
+\begin{aligned}
 J\overset{.}{x_2} = Kx_1 - bx_2 \\
 \text{} \\
 \overset{.}{x_2} = \frac{K}{J}x_1 - \frac{b}{J}x_2
+\end{aligned}
 $$
 
 The solutions for $\overset{.}{x_1}$ and $\overset{.}{x_2}$ are:
@@ -60,6 +66,7 @@ From this, we can construct the state-space description:
 <p align="left">(5)</p>
 
 $$
+\begin{aligned}
 \overset{.}{x} =
 \begin{pmatrix}
 -\frac{R}{L} & -\frac{K}{L} \\
@@ -71,6 +78,7 @@ x +
 0
 \end{pmatrix}
 u
+\end{aligned}
 $$
 
 <p align="left">(6)</p>
@@ -120,17 +128,21 @@ Here we will solve for the transfer function which is $\frac{\Omega(s)}{V_I(s)}$
 First we need to get the Laplace transformation of $v_I$ and $i$ from equations (1) and (2):
 
 $$ 
+\begin{aligned}
 V_I(s) = RI(s) + LsI(s) + K\Omega(s) \\
 V_I(s) = I(s)(R + Ls) + K\Omega(s)
+\end{aligned}
 $$  
 
 <br>
 
 $$
+\begin{aligned}
 sJ\Omega(s) = KI(s) - b\Omega(s) \\
 KI(s) = b\Omega(s) + sJ\Omega(s) \\
 KI(s) = \Omega(s)(b + sJ) \\
 I(s) = \Omega(s)\frac{b + sJ}{K}
+\end{aligned}
 $$
 
 The Laplace transformations are:
@@ -146,15 +158,19 @@ $$ I(s) = \Omega(s)\frac{b + sJ}{K} $$
 Now let's subsitute equation (8) into equation (7):
 
 $$
+\begin{aligned}
 V_I(s) = (\Omega(s)\frac{b + sJ}{K})(R + Ls) + K\Omega(s) \\
 V_I(s) = R\Omega(s)\frac{b + sJ}{K} + Ls\Omega(s)\frac{b + sJ}{K} + K\Omega(s)
+\end{aligned}
 $$
 
 We then factor out the $\Omega(s)$ and the numerator of the equation additionally:
 
 $$
+\begin{aligned}
 V_I(s) = \Omega(s)(\frac{R(b + sJ)}{K} + \frac{Ls(b + sJ)}{K} + K)\\
-V_I(s) = \Omega(s)(\frac{(R + Ls)(b + sJ)}{K} + K) 
+V_I(s) = \Omega(s)(\frac{(R + Ls)(b + sJ)}{K} + K)
+\end{aligned}
 $$
 
 Using our formula for the transfer function $\frac{\Omega(s)}{V_I(s)}$, we can easily see:
@@ -166,10 +182,12 @@ $$
 We can further simplify the transfer function like so:
 
 $$
+\begin{aligned}
 H(s) = \frac{1}{\frac{(R + Ls)(b + sJ)}{K} + K} * \frac{K}{K} \\
 H(s) = \frac{K}{(R + Ls)(b + sJ) + K^2} \\
 H(s) = \frac{K}{Rb + RsJ + Lsb + LJs^2 + K^2} \\
 H(s) = \frac{K}{R(b + sJ) + L(sb + Js^2) + K^2} \\
+\end{aligned}
 $$
 
 So our transfer function is:
