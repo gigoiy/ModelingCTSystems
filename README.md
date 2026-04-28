@@ -21,11 +21,8 @@ We will assign:
 
 $$
 x_1 = i \\
-\text{} \\
 x_2 = \overset{.}{\theta}  \\
-\text{} \\
 y = \overset{.}{\theta} = x_2 \\
-\text{} \\
 v_I = u
 $$
 
@@ -35,11 +32,8 @@ First we solve for $\overset{.}{x_1}$ using equation (1):
 
 $$
 u = Rx_1 + L\overset{.}{x_1} + Kx_2 \\
-\text{} \\
 u - L\overset{.}{x_1} = Rx_1 + Kx_2 \\
-\text{} \\
 -L\overset{.}{x_1} = Rx_1 + Kx_2 - u \\
-\text{} \\
 \overset{.}{x_1} = -\frac{R}{L}x_1 - \frac{K}{L}x_2 + \frac{1}{L}u
 $$
 
@@ -68,12 +62,12 @@ From this, we can construct the state-space description:
 $$
 \overset{.}{x} =
 \begin{pmatrix}
--\frac{R}{L} & -\frac{K}{L} \\ \\
+-\frac{R}{L} & -\frac{K}{L} \\
 \frac{K}{J} & -\frac{b}{J}
 \end{pmatrix}
 x +
 \begin{pmatrix}
-\frac{1}{L} \\ \\
+\frac{1}{L} \\
 0
 \end{pmatrix}
 u
@@ -127,7 +121,6 @@ First we need to get the Laplace transformation of $v_I$ and $i$ from equations 
 
 $$ 
 V_I(s) = RI(s) + LsI(s) + K\Omega(s) \\
-\text{} \\
 V_I(s) = I(s)(R + Ls) + K\Omega(s)
 $$  
 
@@ -135,11 +128,8 @@ $$
 
 $$
 sJ\Omega(s) = KI(s) - b\Omega(s) \\
-\text{} \\
 KI(s) = b\Omega(s) + sJ\Omega(s) \\
-\text{} \\
 KI(s) = \Omega(s)(b + sJ) \\
-\text{} \\
 I(s) = \Omega(s)\frac{b + sJ}{K}
 $$
 
@@ -157,7 +147,6 @@ Now let's subsitute equation (8) into equation (7):
 
 $$
 V_I(s) = (\Omega(s)\frac{b + sJ}{K})(R + Ls) + K\Omega(s) \\
-\text{} \\
 V_I(s) = R\Omega(s)\frac{b + sJ}{K} + Ls\Omega(s)\frac{b + sJ}{K} + K\Omega(s)
 $$
 
@@ -165,7 +154,6 @@ We then factor out the $\Omega(s)$ and the numerator of the equation additionall
 
 $$
 V_I(s) = \Omega(s)(\frac{R(b + sJ)}{K} + \frac{Ls(b + sJ)}{K} + K)\\
-\text{} \\
 V_I(s) = \Omega(s)(\frac{(R + Ls)(b + sJ)}{K} + K) 
 $$
 
@@ -179,11 +167,8 @@ We can further simplify the transfer function like so:
 
 $$
 H(s) = \frac{1}{\frac{(R + Ls)(b + sJ)}{K} + K} * \frac{K}{K} \\
-\text{} \\
 H(s) = \frac{K}{(R + Ls)(b + sJ) + K^2} \\
-\text{} \\
 H(s) = \frac{K}{Rb + RsJ + Lsb + LJs^2 + K^2} \\
-\text{} \\
 H(s) = \frac{K}{R(b + sJ) + L(sb + Js^2) + K^2} \\
 $$
 
